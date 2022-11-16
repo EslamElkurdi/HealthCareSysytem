@@ -240,7 +240,7 @@ namespace HealthCareSysytem
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.patientsList);
             this.panel4.Controls.Add(this.label12);
-            this.panel4.Location = new System.Drawing.Point(17, 272);
+            this.panel4.Location = new System.Drawing.Point(17, 269);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1035, 219);
             this.panel4.TabIndex = 1;

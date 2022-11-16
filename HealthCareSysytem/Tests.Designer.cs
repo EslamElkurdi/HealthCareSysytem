@@ -32,14 +32,12 @@ namespace HealthCareSysytem
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tests));
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DeleteBtn = new System.Windows.Forms.Button();
+            this.SaveBtn = new System.Windows.Forms.Button();
+            this.EditeBtn = new System.Windows.Forms.Button();
+            this.TestCostTb = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TestNameTb = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -56,8 +54,10 @@ namespace HealthCareSysytem
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TestList = new System.Windows.Forms.DataGridView();
+            this.label12 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -67,6 +67,8 @@ namespace HealthCareSysytem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TestList)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox7
@@ -90,75 +92,56 @@ namespace HealthCareSysytem
             this.label13.TabIndex = 20;
             this.label13.Text = "Logout";
             // 
-            // label12
+            // DeleteBtn
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(441, 14);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(126, 36);
-            this.label12.TabIndex = 14;
-            this.label12.Text = "Test List";
+            this.DeleteBtn.BackColor = System.Drawing.Color.Red;
+            this.DeleteBtn.FlatAppearance.BorderSize = 0;
+            this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteBtn.Font = new System.Drawing.Font("Microsoft YaHei", 13F, System.Drawing.FontStyle.Bold);
+            this.DeleteBtn.ForeColor = System.Drawing.Color.White;
+            this.DeleteBtn.Location = new System.Drawing.Point(581, 197);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(150, 43);
+            this.DeleteBtn.TabIndex = 25;
+            this.DeleteBtn.Text = "Delete";
+            this.DeleteBtn.UseVisualStyleBackColor = false;
             // 
-            // panel4
+            // SaveBtn
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.label12);
-            this.panel4.Location = new System.Drawing.Point(17, 272);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1035, 219);
-            this.panel4.TabIndex = 1;
+            this.SaveBtn.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.SaveBtn.FlatAppearance.BorderSize = 0;
+            this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveBtn.Font = new System.Drawing.Font("Microsoft YaHei", 13F, System.Drawing.FontStyle.Bold);
+            this.SaveBtn.ForeColor = System.Drawing.Color.White;
+            this.SaveBtn.Location = new System.Drawing.Point(581, 148);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(150, 43);
+            this.SaveBtn.TabIndex = 24;
+            this.SaveBtn.Text = "Save";
+            this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
-            // button3
+            // EditeBtn
             // 
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft YaHei", 13F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(581, 197);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 43);
-            this.button3.TabIndex = 25;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = false;
+            this.EditeBtn.BackColor = System.Drawing.Color.Orange;
+            this.EditeBtn.FlatAppearance.BorderSize = 0;
+            this.EditeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditeBtn.Font = new System.Drawing.Font("Microsoft YaHei", 13F, System.Drawing.FontStyle.Bold);
+            this.EditeBtn.ForeColor = System.Drawing.Color.White;
+            this.EditeBtn.Location = new System.Drawing.Point(581, 99);
+            this.EditeBtn.Name = "EditeBtn";
+            this.EditeBtn.Size = new System.Drawing.Size(150, 43);
+            this.EditeBtn.TabIndex = 23;
+            this.EditeBtn.Text = "Edite";
+            this.EditeBtn.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // TestCostTb
             // 
-            this.button2.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft YaHei", 13F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(581, 148);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 43);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Orange;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 13F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(581, 99);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 43);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Edite";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(24, 198);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(253, 35);
-            this.textBox1.TabIndex = 16;
+            this.TestCostTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TestCostTb.Location = new System.Drawing.Point(24, 198);
+            this.TestCostTb.Name = "TestCostTb";
+            this.TestCostTb.Size = new System.Drawing.Size(253, 35);
+            this.TestCostTb.TabIndex = 16;
             // 
             // label8
             // 
@@ -171,13 +154,13 @@ namespace HealthCareSysytem
             this.label8.TabIndex = 15;
             this.label8.Text = "Test Cost";
             // 
-            // textBox2
+            // TestNameTb
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(24, 96);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(253, 35);
-            this.textBox2.TabIndex = 14;
+            this.TestNameTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TestNameTb.Location = new System.Drawing.Point(24, 96);
+            this.TestNameTb.Name = "TestNameTb";
+            this.TestNameTb.Size = new System.Drawing.Size(253, 35);
+            this.TestNameTb.TabIndex = 14;
             // 
             // label7
             // 
@@ -204,12 +187,12 @@ namespace HealthCareSysytem
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.DeleteBtn);
+            this.panel3.Controls.Add(this.SaveBtn);
+            this.panel3.Controls.Add(this.EditeBtn);
+            this.panel3.Controls.Add(this.TestCostTb);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.TestNameTb);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Location = new System.Drawing.Point(17, 10);
@@ -360,6 +343,39 @@ namespace HealthCareSysytem
             this.panel1.Size = new System.Drawing.Size(128, 631);
             this.panel1.TabIndex = 19;
             // 
+            // TestList
+            // 
+            this.TestList.BackgroundColor = System.Drawing.Color.White;
+            this.TestList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TestList.GridColor = System.Drawing.Color.DarkOrange;
+            this.TestList.Location = new System.Drawing.Point(24, 63);
+            this.TestList.Name = "TestList";
+            this.TestList.RowHeadersWidth = 62;
+            this.TestList.RowTemplate.Height = 28;
+            this.TestList.Size = new System.Drawing.Size(994, 143);
+            this.TestList.TabIndex = 15;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(441, 14);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(167, 36);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Patient List";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.TestList);
+            this.panel4.Controls.Add(this.label12);
+            this.panel4.Location = new System.Drawing.Point(17, 269);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1035, 219);
+            this.panel4.TabIndex = 2;
+            // 
             // Tests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -378,8 +394,6 @@ namespace HealthCareSysytem
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tests";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -391,6 +405,9 @@ namespace HealthCareSysytem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TestList)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,14 +417,12 @@ namespace HealthCareSysytem
 
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button DeleteBtn;
+        private System.Windows.Forms.Button SaveBtn;
+        private System.Windows.Forms.Button EditeBtn;
+        private System.Windows.Forms.TextBox TestCostTb;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TestNameTb;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel3;
@@ -424,5 +439,8 @@ namespace HealthCareSysytem
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridView TestList;
+        private System.Windows.Forms.Label label12;
     }
 }
