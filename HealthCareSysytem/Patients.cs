@@ -96,5 +96,28 @@ namespace HealthCareSysytem
                 key = Convert.ToInt32(patientsList.SelectedRows[0].Cells[0].Value.ToString());
             }
         }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            if (PatName.Text == "" || PatPhoneTb.Text == "" || PatAddTb.Text == "" || GenCb.SelectedIndex == -1)
+            {
+                MessageBox.Show("Missing Data!!");
+            }
+            else
+            {
+                string Patient = PatName.Text;
+                string Gender = GenCb.SelectedItem.ToString();
+                string BDate = DOBTb.Value.Date.ToString();
+                string phone = PatPhoneTb.Text;
+                string address = PatAddTb.Text;
+                string Query = "update PatientTb1 set PatName = '{0}',PatGen = '{1}',PatDOB = '{2}',PatPhone = '{3}',PatAdd = '{4}' where PatCode = {5}";
+                Query = string.Format(Query, Patient, Gender, BDate, phone, address, key);
+                con.SetData(Query);
+                ShowPatients();
+                MessageBox.Show("Patient Updated!!!");
+
+
+            }
+        }
     }
 }

@@ -357,6 +357,7 @@ namespace HealthCareSysytem
             this.EditBtn.TabIndex = 23;
             this.EditBtn.Text = "Edite";
             this.EditBtn.UseVisualStyleBackColor = false;
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
             // PatAddTb
             // 
