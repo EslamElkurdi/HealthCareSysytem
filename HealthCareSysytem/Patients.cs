@@ -179,6 +179,7 @@ namespace HealthCareSysytem
             this.Hide();
         }
 
+        // Finish
         private void pictureBox4_Click(object sender, EventArgs e)
         {
              Diagnosis obj = new Diagnosis();
