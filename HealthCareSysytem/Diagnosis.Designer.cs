@@ -34,21 +34,19 @@ namespace HealthCareSysytem
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.DeleteBtn = new System.Windows.Forms.Button();
+            this.SaveBtn = new System.Windows.Forms.Button();
+            this.EditeBtn = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.CostTb = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.ResultTb = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DiagDateTb = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -62,6 +60,8 @@ namespace HealthCareSysytem
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PatientCb = new System.Windows.Forms.ComboBox();
+            this.TestCb = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -117,47 +117,48 @@ namespace HealthCareSysytem
             this.panel4.Size = new System.Drawing.Size(1035, 219);
             this.panel4.TabIndex = 1;
             // 
-            // button3
+            // DeleteBtn
             // 
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft YaHei", 13F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(817, 161);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 43);
-            this.button3.TabIndex = 25;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = false;
+            this.DeleteBtn.BackColor = System.Drawing.Color.Red;
+            this.DeleteBtn.FlatAppearance.BorderSize = 0;
+            this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteBtn.Font = new System.Drawing.Font("Microsoft YaHei", 13F, System.Drawing.FontStyle.Bold);
+            this.DeleteBtn.ForeColor = System.Drawing.Color.White;
+            this.DeleteBtn.Location = new System.Drawing.Point(817, 161);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(150, 43);
+            this.DeleteBtn.TabIndex = 25;
+            this.DeleteBtn.Text = "Delete";
+            this.DeleteBtn.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // SaveBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft YaHei", 13F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(817, 112);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 43);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = false;
+            this.SaveBtn.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.SaveBtn.FlatAppearance.BorderSize = 0;
+            this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveBtn.Font = new System.Drawing.Font("Microsoft YaHei", 13F, System.Drawing.FontStyle.Bold);
+            this.SaveBtn.ForeColor = System.Drawing.Color.White;
+            this.SaveBtn.Location = new System.Drawing.Point(817, 112);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(150, 43);
+            this.SaveBtn.TabIndex = 24;
+            this.SaveBtn.Text = "Save";
+            this.SaveBtn.UseVisualStyleBackColor = false;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
-            // button1
+            // EditeBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.Orange;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 13F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(817, 63);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 43);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Edite";
-            this.button1.UseVisualStyleBackColor = false;
+            this.EditeBtn.BackColor = System.Drawing.Color.Orange;
+            this.EditeBtn.FlatAppearance.BorderSize = 0;
+            this.EditeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditeBtn.Font = new System.Drawing.Font("Microsoft YaHei", 13F, System.Drawing.FontStyle.Bold);
+            this.EditeBtn.ForeColor = System.Drawing.Color.White;
+            this.EditeBtn.Location = new System.Drawing.Point(817, 63);
+            this.EditeBtn.Name = "EditeBtn";
+            this.EditeBtn.Size = new System.Drawing.Size(150, 43);
+            this.EditeBtn.TabIndex = 23;
+            this.EditeBtn.Text = "Edite";
+            this.EditeBtn.UseVisualStyleBackColor = false;
             // 
             // label11
             // 
@@ -170,13 +171,13 @@ namespace HealthCareSysytem
             this.label11.TabIndex = 21;
             this.label11.Text = "Diagnosis Date";
             // 
-            // textBox3
+            // CostTb
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(296, 198);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(253, 38);
-            this.textBox3.TabIndex = 20;
+            this.CostTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CostTb.Location = new System.Drawing.Point(296, 198);
+            this.CostTb.Name = "CostTb";
+            this.CostTb.Size = new System.Drawing.Size(253, 38);
+            this.CostTb.TabIndex = 20;
             // 
             // label9
             // 
@@ -189,13 +190,13 @@ namespace HealthCareSysytem
             this.label9.TabIndex = 19;
             this.label9.Text = "Cost";
             // 
-            // textBox4
+            // ResultTb
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(296, 96);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(253, 38);
-            this.textBox4.TabIndex = 18;
+            this.ResultTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ResultTb.Location = new System.Drawing.Point(296, 96);
+            this.ResultTb.Name = "ResultTb";
+            this.ResultTb.Size = new System.Drawing.Size(253, 38);
+            this.ResultTb.TabIndex = 18;
             // 
             // label10
             // 
@@ -208,14 +209,6 @@ namespace HealthCareSysytem
             this.label10.TabIndex = 17;
             this.label10.Text = "Result";
             // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(24, 198);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(253, 38);
-            this.textBox1.TabIndex = 16;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -226,14 +219,6 @@ namespace HealthCareSysytem
             this.label8.Size = new System.Drawing.Size(61, 30);
             this.label8.TabIndex = 15;
             this.label8.Text = "Test";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(24, 96);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(253, 38);
-            this.textBox2.TabIndex = 14;
             // 
             // label7
             // 
@@ -260,18 +245,18 @@ namespace HealthCareSysytem
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.dateTimePicker1);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.TestCb);
+            this.panel3.Controls.Add(this.PatientCb);
+            this.panel3.Controls.Add(this.DiagDateTb);
+            this.panel3.Controls.Add(this.DeleteBtn);
+            this.panel3.Controls.Add(this.SaveBtn);
+            this.panel3.Controls.Add(this.EditeBtn);
             this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Controls.Add(this.CostTb);
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.textBox4);
+            this.panel3.Controls.Add(this.ResultTb);
             this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.textBox2);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Location = new System.Drawing.Point(17, 10);
@@ -279,18 +264,18 @@ namespace HealthCareSysytem
             this.panel3.Size = new System.Drawing.Size(1035, 253);
             this.panel3.TabIndex = 0;
             // 
-            // dateTimePicker1
+            // DiagDateTb
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Tai Le", 10F);
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.MenuHighlight;
-            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.DimGray;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(578, 96);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(183, 38);
-            this.dateTimePicker1.TabIndex = 26;
+            this.DiagDateTb.CalendarFont = new System.Drawing.Font("Microsoft Tai Le", 10F);
+            this.DiagDateTb.CalendarMonthBackground = System.Drawing.SystemColors.MenuHighlight;
+            this.DiagDateTb.CalendarTitleBackColor = System.Drawing.Color.DimGray;
+            this.DiagDateTb.CalendarTitleForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.DiagDateTb.CalendarTrailingForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.DiagDateTb.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DiagDateTb.Location = new System.Drawing.Point(578, 96);
+            this.DiagDateTb.Name = "DiagDateTb";
+            this.DiagDateTb.Size = new System.Drawing.Size(183, 38);
+            this.DiagDateTb.TabIndex = 26;
             // 
             // label5
             // 
@@ -436,6 +421,28 @@ namespace HealthCareSysytem
             this.panel1.Size = new System.Drawing.Size(104, 631);
             this.panel1.TabIndex = 19;
             // 
+            // PatientCb
+            // 
+            this.PatientCb.FormattingEnabled = true;
+            this.PatientCb.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.PatientCb.Location = new System.Drawing.Point(24, 95);
+            this.PatientCb.Name = "PatientCb";
+            this.PatientCb.Size = new System.Drawing.Size(253, 38);
+            this.PatientCb.TabIndex = 27;
+            // 
+            // TestCb
+            // 
+            this.TestCb.FormattingEnabled = true;
+            this.TestCb.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.TestCb.Location = new System.Drawing.Point(24, 198);
+            this.TestCb.Name = "TestCb";
+            this.TestCb.Size = new System.Drawing.Size(253, 38);
+            this.TestCb.TabIndex = 28;
+            // 
             // Diagnosis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 30F);
@@ -478,17 +485,15 @@ namespace HealthCareSysytem
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button DeleteBtn;
+        private System.Windows.Forms.Button SaveBtn;
+        private System.Windows.Forms.Button EditeBtn;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox CostTb;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox ResultTb;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel3;
@@ -505,6 +510,8 @@ namespace HealthCareSysytem
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DiagDateTb;
+        private System.Windows.Forms.ComboBox TestCb;
+        private System.Windows.Forms.ComboBox PatientCb;
     }
 }
