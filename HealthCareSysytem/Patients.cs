@@ -119,5 +119,25 @@ namespace HealthCareSysytem
 
             }
         }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            if (key == 0)
+            {
+                MessageBox.Show("select a ptient!!");
+            }
+            else
+            {
+               
+                string Query = "delete from PatientTb1 where PatCode = {0}";
+                Query = string.Format(Query, key);
+                con.SetData(Query);
+                ShowPatients();
+                MessageBox.Show("Patient Deleted!!!");
+
+
+            }
+
+        }
     }
 }
