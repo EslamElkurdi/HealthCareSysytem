@@ -62,6 +62,7 @@ namespace HealthCareSysytem
             this.panel1 = new System.Windows.Forms.Panel();
             this.PatientCb = new System.Windows.Forms.ComboBox();
             this.TestCb = new System.Windows.Forms.ComboBox();
+            this.diagnosisList = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -73,6 +74,7 @@ namespace HealthCareSysytem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.diagnosisList)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox7
@@ -111,6 +113,7 @@ namespace HealthCareSysytem
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.diagnosisList);
             this.panel4.Controls.Add(this.label12);
             this.panel4.Location = new System.Drawing.Point(17, 272);
             this.panel4.Name = "panel4";
@@ -174,6 +177,7 @@ namespace HealthCareSysytem
             // CostTb
             // 
             this.CostTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CostTb.Enabled = false;
             this.CostTb.Location = new System.Drawing.Point(296, 198);
             this.CostTb.Name = "CostTb";
             this.CostTb.Size = new System.Drawing.Size(253, 38);
@@ -442,6 +446,21 @@ namespace HealthCareSysytem
             this.TestCb.Name = "TestCb";
             this.TestCb.Size = new System.Drawing.Size(253, 38);
             this.TestCb.TabIndex = 28;
+            this.TestCb.SelectedIndexChanged += new System.EventHandler(this.TestCb_SelectedIndexChanged);
+            this.TestCb.SelectionChangeCommitted += new System.EventHandler(this.TestCb_SelectionChangeCommitted);
+            // 
+            // diagnosisList
+            // 
+            this.diagnosisList.BackgroundColor = System.Drawing.Color.White;
+            this.diagnosisList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.diagnosisList.GridColor = System.Drawing.Color.DarkOrange;
+            this.diagnosisList.Location = new System.Drawing.Point(24, 53);
+            this.diagnosisList.Name = "diagnosisList";
+            this.diagnosisList.RowHeadersWidth = 62;
+            this.diagnosisList.RowTemplate.Height = 28;
+            this.diagnosisList.Size = new System.Drawing.Size(994, 143);
+            this.diagnosisList.TabIndex = 16;
+            this.diagnosisList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.patientsList_CellContentClick);
             // 
             // Diagnosis
             // 
@@ -474,6 +493,7 @@ namespace HealthCareSysytem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.diagnosisList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -513,5 +533,6 @@ namespace HealthCareSysytem
         private System.Windows.Forms.DateTimePicker DiagDateTb;
         private System.Windows.Forms.ComboBox TestCb;
         private System.Windows.Forms.ComboBox PatientCb;
+        private System.Windows.Forms.DataGridView diagnosisList;
     }
 }
