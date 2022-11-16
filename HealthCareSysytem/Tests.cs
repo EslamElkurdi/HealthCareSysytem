@@ -98,5 +98,25 @@ namespace HealthCareSysytem
 
             }
         }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            if (key == 0)
+            {
+                MessageBox.Show("Selected a Test!");
+            }
+            else
+            {
+
+                string Query = "Delete from TestTb where TestCode = {0}";
+                Query = string.Format(Query, key);
+                con.SetData(Query);
+                Showtest();
+                Clear();
+                MessageBox.Show("Test Deleted!!!");
+
+
+            }
+        }
     }
 }
