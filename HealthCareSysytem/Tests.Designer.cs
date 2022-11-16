@@ -134,6 +134,7 @@ namespace HealthCareSysytem
             this.EditeBtn.TabIndex = 23;
             this.EditeBtn.Text = "Edite";
             this.EditeBtn.UseVisualStyleBackColor = false;
+            this.EditeBtn.Click += new System.EventHandler(this.EditeBtn_Click);
             // 
             // TestCostTb
             // 
@@ -354,6 +355,7 @@ namespace HealthCareSysytem
             this.TestList.RowTemplate.Height = 28;
             this.TestList.Size = new System.Drawing.Size(994, 143);
             this.TestList.TabIndex = 15;
+            this.TestList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TestList_CellContentClick);
             // 
             // label12
             // 

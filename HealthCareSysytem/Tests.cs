@@ -50,7 +50,7 @@ namespace HealthCareSysytem
                 con.SetData(Query);
                 Showtest();
                 Clear();
-                MessageBox.Show("Patient Added!!!");
+                MessageBox.Show("Test Added!!!");
 
 
             }
@@ -60,6 +60,43 @@ namespace HealthCareSysytem
         private void TestList_Paint(object sender, PaintEventArgs e)
         {
 
-        } 
+        }
+
+        int key = 0;
+
+        private void TestList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            TestNameTb.Text = TestList.SelectedRows[0].Cells[1].Value.ToString();
+            TestCostTb.Text = TestList.SelectedRows[0].Cells[2].Value.ToString();
+           
+            if (TestNameTb.Text == "")
+            {
+                key = 0;
+            }
+            else
+            {
+                key = Convert.ToInt32(TestList.SelectedRows[0].Cells[0].Value.ToString());
+            }
+        }
+
+        private void EditeBtn_Click(object sender, EventArgs e)
+        {
+            if (TestNameTb.Text == "" || TestCostTb.Text == "")
+            {
+                MessageBox.Show("Missing Data!!");
+            }
+            else
+            {
+                
+                string Query = "update TestTb set TestName = '{0}',TestCost = {1} where TestCode = {2}";
+                Query = string.Format(Query, TestNameTb, TestCostTb, key);
+                con.SetData(Query);
+                Showtest();
+                Clear();
+                MessageBox.Show("Test Updated!!!");
+
+
+            }
+        }
     }
 }
