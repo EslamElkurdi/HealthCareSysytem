@@ -71,6 +71,7 @@ namespace HealthCareSysytem
                 Query = string.Format(Query, Patient, Gender, BDate, phone, address);
                 con.SetData(Query);
                 ShowPatients();
+                Clear();
                 MessageBox.Show("Patient Added!!!");
 
 
@@ -114,10 +115,19 @@ namespace HealthCareSysytem
                 Query = string.Format(Query, Patient, Gender, BDate, phone, address, key);
                 con.SetData(Query);
                 ShowPatients();
+                Clear();
                 MessageBox.Show("Patient Updated!!!");
 
 
             }
+        }
+
+        private void Clear() 
+        {
+            PatName.Text = "";
+            GenCb.SelectedIndex = -1;
+            PatPhoneTb.Text = "";
+            PatAddTb.Text = "";
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
@@ -133,6 +143,7 @@ namespace HealthCareSysytem
                 Query = string.Format(Query, key);
                 con.SetData(Query);
                 ShowPatients();
+                Clear();
                 MessageBox.Show("Patient Deleted!!!");
 
 
