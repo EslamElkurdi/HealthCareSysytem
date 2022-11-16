@@ -34,6 +34,7 @@ namespace HealthCareSysytem
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.diagnosisList = new System.Windows.Forms.DataGridView();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
             this.EditeBtn = new System.Windows.Forms.Button();
@@ -46,6 +47,8 @@ namespace HealthCareSysytem
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.TestCb = new System.Windows.Forms.ComboBox();
+            this.PatientCb = new System.Windows.Forms.ComboBox();
             this.DiagDateTb = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -60,11 +63,9 @@ namespace HealthCareSysytem
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.PatientCb = new System.Windows.Forms.ComboBox();
-            this.TestCb = new System.Windows.Forms.ComboBox();
-            this.diagnosisList = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.diagnosisList)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -74,7 +75,6 @@ namespace HealthCareSysytem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.diagnosisList)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox7
@@ -120,6 +120,19 @@ namespace HealthCareSysytem
             this.panel4.Size = new System.Drawing.Size(1035, 219);
             this.panel4.TabIndex = 1;
             // 
+            // diagnosisList
+            // 
+            this.diagnosisList.BackgroundColor = System.Drawing.Color.White;
+            this.diagnosisList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.diagnosisList.GridColor = System.Drawing.Color.DarkOrange;
+            this.diagnosisList.Location = new System.Drawing.Point(24, 53);
+            this.diagnosisList.Name = "diagnosisList";
+            this.diagnosisList.RowHeadersWidth = 62;
+            this.diagnosisList.RowTemplate.Height = 28;
+            this.diagnosisList.Size = new System.Drawing.Size(994, 143);
+            this.diagnosisList.TabIndex = 16;
+            this.diagnosisList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.patientsList_CellContentClick);
+            // 
             // DeleteBtn
             // 
             this.DeleteBtn.BackColor = System.Drawing.Color.Red;
@@ -133,6 +146,7 @@ namespace HealthCareSysytem
             this.DeleteBtn.TabIndex = 25;
             this.DeleteBtn.Text = "Delete";
             this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // SaveBtn
             // 
@@ -162,6 +176,7 @@ namespace HealthCareSysytem
             this.EditeBtn.TabIndex = 23;
             this.EditeBtn.Text = "Edite";
             this.EditeBtn.UseVisualStyleBackColor = false;
+            this.EditeBtn.Click += new System.EventHandler(this.EditeBtn_Click);
             // 
             // label11
             // 
@@ -267,6 +282,30 @@ namespace HealthCareSysytem
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1035, 253);
             this.panel3.TabIndex = 0;
+            // 
+            // TestCb
+            // 
+            this.TestCb.FormattingEnabled = true;
+            this.TestCb.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.TestCb.Location = new System.Drawing.Point(24, 198);
+            this.TestCb.Name = "TestCb";
+            this.TestCb.Size = new System.Drawing.Size(253, 38);
+            this.TestCb.TabIndex = 28;
+            this.TestCb.SelectedIndexChanged += new System.EventHandler(this.TestCb_SelectedIndexChanged);
+            this.TestCb.SelectionChangeCommitted += new System.EventHandler(this.TestCb_SelectionChangeCommitted);
+            // 
+            // PatientCb
+            // 
+            this.PatientCb.FormattingEnabled = true;
+            this.PatientCb.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.PatientCb.Location = new System.Drawing.Point(24, 95);
+            this.PatientCb.Name = "PatientCb";
+            this.PatientCb.Size = new System.Drawing.Size(253, 38);
+            this.PatientCb.TabIndex = 27;
             // 
             // DiagDateTb
             // 
@@ -425,43 +464,6 @@ namespace HealthCareSysytem
             this.panel1.Size = new System.Drawing.Size(104, 631);
             this.panel1.TabIndex = 19;
             // 
-            // PatientCb
-            // 
-            this.PatientCb.FormattingEnabled = true;
-            this.PatientCb.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.PatientCb.Location = new System.Drawing.Point(24, 95);
-            this.PatientCb.Name = "PatientCb";
-            this.PatientCb.Size = new System.Drawing.Size(253, 38);
-            this.PatientCb.TabIndex = 27;
-            // 
-            // TestCb
-            // 
-            this.TestCb.FormattingEnabled = true;
-            this.TestCb.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.TestCb.Location = new System.Drawing.Point(24, 198);
-            this.TestCb.Name = "TestCb";
-            this.TestCb.Size = new System.Drawing.Size(253, 38);
-            this.TestCb.TabIndex = 28;
-            this.TestCb.SelectedIndexChanged += new System.EventHandler(this.TestCb_SelectedIndexChanged);
-            this.TestCb.SelectionChangeCommitted += new System.EventHandler(this.TestCb_SelectionChangeCommitted);
-            // 
-            // diagnosisList
-            // 
-            this.diagnosisList.BackgroundColor = System.Drawing.Color.White;
-            this.diagnosisList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.diagnosisList.GridColor = System.Drawing.Color.DarkOrange;
-            this.diagnosisList.Location = new System.Drawing.Point(24, 53);
-            this.diagnosisList.Name = "diagnosisList";
-            this.diagnosisList.RowHeadersWidth = 62;
-            this.diagnosisList.RowTemplate.Height = 28;
-            this.diagnosisList.Size = new System.Drawing.Size(994, 143);
-            this.diagnosisList.TabIndex = 16;
-            this.diagnosisList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.patientsList_CellContentClick);
-            // 
             // Diagnosis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 30F);
@@ -482,6 +484,7 @@ namespace HealthCareSysytem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.diagnosisList)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -493,7 +496,6 @@ namespace HealthCareSysytem
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.diagnosisList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

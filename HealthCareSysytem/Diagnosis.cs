@@ -126,5 +126,52 @@ namespace HealthCareSysytem
                 key = Convert.ToInt32(diagnosisList.SelectedRows[0].Cells[0].Value.ToString());
             }
         }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            if (key == 0)
+            {
+                MessageBox.Show("Missing Data!!");
+            }
+            else
+            {
+                string DDtae = DiagDateTb.Text;
+                int Patient = Convert.ToInt32(PatientCb.SelectedValue.ToString());
+                int Test = Convert.ToInt32(TestCb.SelectedValue.ToString());
+                int Cost = Convert.ToInt32(CostTb.Text);
+                string Result = ResultTb.Text;
+                string Query = "Delete from DiagnosisTb1 where DiagCode = {0}";
+                Query = string.Format(Query, key);
+                Con.SetData(Query);
+                ShowDiagnosis();
+                Clear();
+                MessageBox.Show("Patient Deleted!!!");
+
+
+            }
+        }
+
+        private void EditeBtn_Click(object sender, EventArgs e)
+        {
+            if (PatientCb.SelectedIndex == -1 || CostTb.Text == "" || ResultTb.Text == "")
+            {
+                MessageBox.Show("Missing Data!!");
+            }
+            else
+            {
+                string DDate = DiagDateTb.Value.Date.ToString();
+                int Patient = Convert.ToInt32(PatientCb.SelectedValue.ToString());
+                int Test = Convert.ToInt32(TestCb.SelectedValue.ToString());
+                int Cost = Convert.ToInt32(CostTb.Text);
+                string Result = ResultTb.Text;
+
+                string Query = "Update DiagnosisTb1 set DiagDate = {0},Patient = {1},Test {2},Cost = {3},Result = {4} where DiagnosisCode = {5}";
+                Query = string.Format(Query, DDate, Patient, Test, Cost, Result,key);
+                Con.SetData(Query);
+                ShowDiagnosis();
+                Clear();
+                MessageBox.Show("Diagnosis Updated!!!");
+            }
+        }
     }
 }
