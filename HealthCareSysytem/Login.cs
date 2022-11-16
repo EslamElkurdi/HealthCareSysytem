@@ -31,5 +31,24 @@ namespace HealthCareSysytem
         {
 
         }
+
+        private void LoginBtn_Click(object sender, EventArgs e)
+        {
+            if (UserNameTb.Text == "" || PasswordTb.Text == "")
+            {
+                MessageBox.Show("Missing Data!!");
+
+            }
+            else if (UserNameTb.Text == "Admin" && PasswordTb.Text == "Password")
+            {
+                Patients obj = new Patients();
+                obj.Show();
+                this.Hide();
+            }
+            else {
+                UserNameTb.Text = "";
+                PasswordTb.Text = "";
+            }
+        }
     }
 }
